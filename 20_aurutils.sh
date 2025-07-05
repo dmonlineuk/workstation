@@ -27,5 +27,5 @@ aur sync aurutils
 sudo pacman -S aurutils
 
 # Can now drop aurutils project
-cd ~/projects/bastion/
+cd ~/projects/workstation/
 rm -rf ~/projects/aurutils/
