@@ -8,3 +8,6 @@ git config --global user.name dan
 git config --global credential.credentialStore gpg
 gpg --quick-generate-key "Daniel Morris (Happy to be here) <dan@dmonline.uk>"
 pass init "Daniel Morris (Happy to be here) <dan@dmonline.uk>"
+
+# we can remove the script that was downloaded
+rm -f dotnet-install.sh
