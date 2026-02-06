@@ -1,30 +1,32 @@
-# Bastion
+# Workstation
 
-Purpose is to come up with repeatable scripts that can ne used
-whenever we need / want to recreate our bastion vm
+Reference for standing up a workstation for my use. This is generally OS agnostic.
 
-## First Steps
+## Software and Settings
 
-This repo is expected to be pulled onto a freshly installed minimal
-install of arch linux. Ensure git is available.
+I want to use:
 
-Clone the repo:
-`git clone https://github.com/dmonline.uk/bastion`
+### firefox
 
-## Use of repo
+Make it default, simple home page (no distractions) and make it use private mode always. This is in "history" custom settings
 
-The scripts can be run individually, or as a batch. Note these wrappers:
+### rclone
 
-* runme - this will run all scripts with the extension '.sh' in alpha-numeric order
-* runme_test - this will print out the scripts without running them
+Use it to create a way to pull items from Google Drive, mainly my keepass database. My own client id and secret are available in Drive
 
-Any scripts can be removed from the batch process by having the extension renamed.
-Any _other_ extension will do, but '.txt' is chosen.
+After setting up "google" as the remote, try this for checking and syncing
 
-Any script can be 'sourced' manually:
+```bash
+# rclone sync [source] [destination]
+# for example, to check and sync up to remote from local:
+rclone check google/kpdb google:kpdb
+rclone sync google/kpdb google:kpdb
+```
 
-* `source 10_run_first.sh`
-or
-* `. 25_ignored.txt`
+### git
 
+Set up to use SSH to enable simple editing of repos, default is fine. Log in using creds in keepass
 
+### keepassxc 
+
+Access the database when sync'd using rclone
